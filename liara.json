@@ -4,14 +4,5 @@
   "build": {
     "location": "iran"
   },
-  "disks": [
-    {
-      "name": "database",
-      "mountPath": "/app/prisma"
-    }
-  ],
-  "env": {
-    "NODE_ENV": "production",
-    "PORT": "3000"
-  }
+  "disks": []
 }
