@@ -1,0 +1,51 @@
+export declare class CreateTenantDto {
+    name: string;
+    slug: string;
+    contactEmail: string;
+    contactPhone: string;
+    logoUrl?: string;
+    primaryColor?: string;
+    theme?: string;
+    domain?: string;
+    subdomain?: string;
+    customDomain?: string;
+    parentTenantId?: string;
+    commissionRate?: number;
+    commissionAmount?: number;
+    commissionType?: 'PERCENTAGE' | 'FIXED';
+    parentCommissionRate?: number;
+    parentCommissionAmount?: number;
+    parentCommissionType?: 'PERCENTAGE' | 'FIXED';
+    isWhiteLabel?: boolean;
+    pricingType?: 'GROSS' | 'NET';
+    footerText?: string;
+    supportEmail?: string;
+    supportPhone?: string;
+    customBranding?: any;
+    isActive?: boolean;
+}
+export declare class UpdateTenantDto {
+    name?: string;
+    slug?: string;
+    contactEmail?: string;
+    contactPhone?: string;
+    logoUrl?: string;
+    primaryColor?: string;
+    theme?: string;
+    domain?: string;
+    subdomain?: string;
+    customDomain?: string;
+    commissionRate?: number;
+    commissionAmount?: number;
+    commissionType?: 'PERCENTAGE' | 'FIXED';
+    parentCommissionRate?: number;
+    parentCommissionAmount?: number;
+    parentCommissionType?: 'PERCENTAGE' | 'FIXED';
+    isWhiteLabel?: boolean;
+    pricingType?: 'GROSS' | 'NET';
+    footerText?: string;
+    supportEmail?: string;
+    supportPhone?: string;
+    customBranding?: any;
+    isActive?: boolean;
+}

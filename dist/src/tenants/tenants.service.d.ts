@@ -1,0 +1,57 @@
+import { PrismaService } from '../prisma/prisma.service';
+import { CreateTenantDto } from './dto/create-tenant.dto';
+import { UpdateTenantDto } from './dto/update-tenant.dto';
+import { Tenant } from '@prisma/client';
+export declare class TenantsService {
+    private prisma;
+    constructor(prisma: PrismaService);
+    createTenant(createTenantDto: CreateTenantDto): Promise<Tenant>;
+    findAllTenants(): Promise<Tenant[]>;
+    findTenantById(id: string): Promise<Tenant>;
+    findTenantBySlug(slug: string): Promise<Tenant>;
+    findTenantByDomain(domain: string): Promise<Tenant>;
+    updateTenant(id: string, updateTenantDto: UpdateTenantDto): Promise<Tenant>;
+    deleteTenant(id: string): Promise<void>;
+    getSubTenants(parentTenantId: string): Promise<Tenant[]>;
+    getTenantStats(tenantId: string): Promise<{
+        tenant: {
+            id: string;
+            slug: string;
+            domain: string | null;
+            subdomain: string | null;
+            customDomain: string | null;
+            name: string;
+            contactEmail: string;
+            contactPhone: string;
+            isActive: boolean;
+            createdAt: Date;
+            updatedAt: Date;
+            logoUrl: string | null;
+            primaryColor: string | null;
+            theme: string;
+            homepageContentId: string;
+            supportedLanguages: string;
+            supportedCurrencies: string;
+            parentTenantId: string | null;
+            commissionRate: number;
+            commissionAmount: bigint | null;
+            commissionType: string;
+            parentCommissionRate: number;
+            parentCommissionAmount: bigint | null;
+            parentCommissionType: string;
+            isWhiteLabel: boolean;
+            pricingType: string;
+            customBranding: string | null;
+            footerText: string | null;
+            supportEmail: string | null;
+            supportPhone: string | null;
+        };
+        totalBookings: number;
+        totalRevenue: number;
+        totalCommissionEarned: number | bigint;
+        totalCommissionPaid: number | bigint;
+        commissionTransactions: number;
+    }>;
+    activateTenant(id: string): Promise<Tenant>;
+    deactivateTenant(id: string): Promise<Tenant>;
+}
